@@ -26,7 +26,7 @@ function GlowCard({ children }: { children: React.ReactNode }) {
       className="relative rounded-2xl overflow-hidden border border-white/10 cursor-pointer"
     >
       <div
-        className={`pointer-events-none absolute z-0 size-60 rounded-full bg-linear-to-r from-sky-400/50 via-cyan-400/40 to-blue-500/50 blur-3xl transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
+        className={`pointer-events-none absolute z-0 size-60 rounded-full bg-linear-to-r from-sky-400/60 via-cyan-400/50 to-blue-500/60 blur-3xl transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
         style={{
           top: position.y - 120,
           left: position.x - 120,
@@ -117,10 +117,10 @@ export default function WorkExperienceSection() {
   return (
     <section
       id="experience"
-      className="relative w-full border-t border-white/10 bg-black/40 py-20"
+      className="relative w-full border-t border-white/10 bg-black/40 py-10 md:py-20"
     >
       <div className="mx-auto max-w-[900px] px-6 md:px-12">
-        <h2 className="mb-12 text-3xl font-bold tracking-tight text-white md:mb-16 md:text-4xl">
+        <h2 className="mb-10 text-3xl font-bold tracking-tight text-white md:mb-16 md:text-4xl">
           Work Experience
         </h2>
 
