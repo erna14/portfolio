@@ -2,10 +2,10 @@ import Prism from "@/components/backgrounds/Prism"
 
 const HeroSection = () => {
   return (
-    <div className='w-full h-screen relative'>
+    <section className='w-full h-screen relative overflow-hidden'>
       <Prism 
-        animationType="rotate" timeScale={0.5} height={3.1} baseWidth={5} 
-        scale={3} hueShift={0} colorFrequency={1} noise={0} glow={1}
+        animationType="rotate" timeScale={0.5} height={3} baseWidth={5} 
+        scale={3.3} hueShift={0} colorFrequency={1} noise={0} glow={0.7}
       />
 
       <div className='absolute inset-0 z-10 flex items-center justify-center h-screen flex-col gap-6'> 
@@ -40,7 +40,7 @@ const HeroSection = () => {
         </div>
         
       </div>
-    </div>
+    </section>
   )
 }
 

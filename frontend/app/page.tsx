@@ -1,17 +1,11 @@
-
-import HeroSection from './_components/HeroSection';
+import HeroSection from "./_components/HeroSection";
+import WorkExperienceSection from "./_components/WorkExperienceSection";
 
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden">
       <HeroSection />
-
-      {/* Content */}
-      <section className="relative z-10 flex items-center justify-center h-screen">
-        <h1 className="text-white text-5xl font-bold">
-          Nesto Nesto
-        </h1>
-      </section>
+      <WorkExperienceSection />
     </main>
   );
 }
