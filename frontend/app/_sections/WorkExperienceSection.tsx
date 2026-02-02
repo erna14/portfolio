@@ -1,5 +1,6 @@
 "use client";
 
+import { experiences } from "@/data/constants";
 import { useEffect, useRef, useState } from "react";
 
 /* ----------------------------------
@@ -87,55 +88,6 @@ function AnimateWhenVisible({
   );
 }
 
-/* ----------------------------------
-   Data
------------------------------------ */
-
-const experiences = [
-  {
-    company: "Monetize Ad Sarajevo",
-    role: "Software Engineer",
-    period: "Feb 2024 — Present",
-    summary:
-      "Building scalable, performance-focused web applications and internal tools.",
-    bullets: [
-      "Developed drag-and-drop workflow builders and interactive dashboards",
-      "Implemented real-time features using WebSockets and background processes",
-      "Worked on SEO-driven e-commerce solutions with advanced search",
-    ],
-    skills: ["React", "Next.js", "TypeScript", "WebSockets"],
-  },
-  {
-    company: "MIBO Komunikacije Sarajevo",
-    role: "Network Engineer Intern",
-    period: "Jul 2023 — Aug 2023",
-    summary:
-      "Hands-on experience with networking infrastructure and system administration.",
-    bullets: [
-      "Configured Cisco devices and routing and switching fundamentals",
-      "Managed Windows Server, Active Directory, DHCP, and DNS",
-      "Worked with Linux CLI, backups, monitoring, and basic cybersecurity",
-    ],
-    skills: ["Cisco", "Linux", "Windows Server"],
-  },
-  {
-    company: "Trinity d.o.o. Sarajevo",
-    role: "Full-stack Development Intern",
-    period: "Oct 2022 — Jan 2023",
-    summary:
-      "Built full-stack features with a focus on authentication and user management.",
-    bullets: [
-      "Developed frontend and backend for a social media application",
-      "Implemented secure authentication, authorization, and session handling",
-    ],
-    skills: ["React", "Node.js", "Auth"],
-  },
-];
-
-/* ----------------------------------
-   Section
------------------------------------ */
-
 export default function WorkExperienceSection() {
   return (
     <section
@@ -151,28 +103,24 @@ export default function WorkExperienceSection() {
           <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
             Work Experience
           </h2>
+          <p className="mt-4 text-sm leading-relaxed text-white/60 md:text-base">
+            Roles and projects where I applied my skills to build impactful applications.
+          </p>
         </div>
 
         {/* Timeline */}
         <div className="relative">
           {/* Vertical line */}
-          <div
-            className="
-              hidden md:block
-              absolute left-5 top-0 h-full w-px
-              bg-gradient-to-b from-sky-400/0 via-sky-400/60 to-sky-400/0
-              shadow-[0_0_14px_rgba(56,189,248,0.4)]
-            "
-          />
+          <div className="timeline-vertical-line" />
 
-          <div className="flex flex-col gap-14">
+          <div className="flex flex-col gap-8 md:gap-14">
             {experiences.map((job, index) => (
               <AnimateWhenVisible key={job.company} index={index}>
                 <div className="relative md:pl-16">
                   {/* Dot + connector */}
-                  <div className="hidden md:flex absolute left-[15px] top-8 items-center">
+                  <div className="hidden md:flex absolute left-[16px] top-8 items-center">
                     {/* dot */}
-                    <span className="h-3 w-3 rounded-full bg-sky-400 shadow-[0_0_16px_rgba(56,189,248,0.9)]" />
+                    <span className="h-2 w-2 rounded-full bg-sky-400 shadow-[0_0_16px_rgba(56,189,248,0.9)]" />
                     {/* connector */}
                     <span className="h-px w-10 bg-sky-400/70" />
                   </div>

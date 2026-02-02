@@ -45,3 +45,7 @@ body {
 .animate-skill-marquee {
   animation: skill-marquee 35s linear infinite;
 }
+
+.timeline-vertical-line {
+  @apply hidden md:block absolute left-5 top-0 h-full w-px bg-gradient-to-b from-sky-400/0 via-sky-400/60 to-sky-400/0 shadow-[0_0_14px_rgba(56,189,248,0.4)];
+}

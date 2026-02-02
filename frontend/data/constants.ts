@@ -40,3 +40,44 @@ export const skills: Skill[] = [
   { name: "Git", icon: SiGit, color: "#F05032" },
   { name: "GitHub", icon: SiGithub, color: "#ffffff" },
 ];
+
+export const experiences = [
+  {
+    company: "Monetize Ad Sarajevo",
+    role: "Software Engineer",
+    period: "Feb 2024 — Present",
+    summary:
+      "Building scalable, performance-focused web applications and internal tools.",
+    bullets: [
+      "Developed drag-and-drop workflow builders and interactive dashboards",
+      "Implemented real-time features using WebSockets and background processes",
+      "Worked on SEO-driven e-commerce solutions with advanced search",
+    ],
+    skills: ["React", "Next.js", "TypeScript", "WebSockets"],
+  },
+  {
+    company: "MIBO Komunikacije Sarajevo",
+    role: "Network Engineer Intern",
+    period: "Jul 2023 — Aug 2023",
+    summary:
+      "Hands-on experience with networking infrastructure and system administration.",
+    bullets: [
+      "Configured Cisco devices and routing and switching fundamentals",
+      "Managed Windows Server, Active Directory, DHCP, and DNS",
+      "Worked with Linux CLI, backups, monitoring, and basic cybersecurity",
+    ],
+    skills: ["Cisco", "Linux", "Windows Server"],
+  },
+  {
+    company: "Trinity d.o.o. Sarajevo",
+    role: "Full-stack Development Intern",
+    period: "Oct 2022 — Jan 2023",
+    summary:
+      "Built full-stack features with a focus on authentication and user management.",
+    bullets: [
+      "Developed frontend and backend for a social media application",
+      "Implemented secure authentication, authorization, and session handling",
+    ],
+    skills: ["React", "Node.js", "Auth"],
+  },
+];
