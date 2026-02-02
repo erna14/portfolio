@@ -1,4 +1,4 @@
-import { HeroSection, SkillsSection, WorkExperienceSection } from "./_sections";
+import { ContactFormSection, HeroSection, SkillsSection, WorkExperienceSection } from "./_sections";
 
 export default function Home() {
   return (
@@ -6,6 +6,7 @@ export default function Home() {
       {/* <HeroSection /> */}
       <WorkExperienceSection />
       <SkillsSection />
+      <ContactFormSection />
     </main>
   );
 }
