@@ -1,0 +1,42 @@
+import type { IconType } from "react-icons/lib";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiDotnet,
+  SiPython,
+  SiJavascript,
+  SiTypescript,
+  SiPhp,
+  SiLinux,
+  SiMysql,
+  SiPostgresql,
+  SiDocker,
+  SiGit,
+  SiGithub,
+} from "react-icons/si";
+import { DiRedis } from "react-icons/di";
+
+export type Skill = {
+  name: string;
+  icon: IconType;
+  color: string;
+};
+
+export const skills: Skill[] = [
+  { name: "React", icon: SiReact, color: "#61DAFB" },
+  { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
+  { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+  { name: ".NET", icon: SiDotnet, color: "#512BD4" },
+  { name: "Python", icon: SiPython, color: "#3776AB" },
+  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+  { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  { name: "PHP", icon: SiPhp, color: "#777BB4" },
+  { name: "Linux", icon: SiLinux, color: "#FCC624" },
+  { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+  { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+  { name: "Redis", icon: DiRedis, color: "#DC382D" },
+  { name: "Docker", icon: SiDocker, color: "#2496ED" },
+  { name: "Git", icon: SiGit, color: "#F05032" },
+  { name: "GitHub", icon: SiGithub, color: "#ffffff" },
+];

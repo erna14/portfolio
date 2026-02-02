@@ -1,11 +1,11 @@
-import HeroSection from "./_components/HeroSection";
-import WorkExperienceSection from "./_components/WorkExperienceSection";
+import { HeroSection, SkillsSection, WorkExperienceSection } from "./_sections";
 
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden">
-      <HeroSection />
+      {/* <HeroSection /> */}
       <WorkExperienceSection />
+      <SkillsSection />
     </main>
   );
 }
