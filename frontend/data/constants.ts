@@ -1,20 +1,5 @@
 import type { IconType } from "react-icons/lib";
-import {
-  SiReact,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiDotnet,
-  SiPython,
-  SiJavascript,
-  SiTypescript,
-  SiPhp,
-  SiLinux,
-  SiMysql,
-  SiPostgresql,
-  SiDocker,
-  SiGit,
-  SiGithub,
-} from "react-icons/si";
+import { SiReact, SiNextdotjs, SiNodedotjs, SiDotnet, SiPython, SiJavascript, SiTypescript, SiPhp, SiLinux, SiMysql, SiPostgresql, SiDocker, SiGit, SiGithub } from "react-icons/si";
 import { DiRedis } from "react-icons/di";
 
 export type Skill = {

@@ -18,7 +18,6 @@ export default function ContactFormSection() {
       <div className="pointer-events-none absolute -right-40 bottom-20 h-70 w-70 md:h-90 md:w-90 rounded-full bg-teal-700/30 blur-[100px]" aria-hidden />
 
       <div className="relative mx-auto max-w-3xl px-6 md:px-12">
-        {/* header */}
         <div className="mb-12 text-center">
           <p className="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-white/50">
             Get in Touch
