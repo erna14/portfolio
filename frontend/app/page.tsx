@@ -1,4 +1,4 @@
-import { ContactFormSection, HeroSection, SkillsSection, WorkExperienceSection } from "./_sections";
+import { HeroSection, WorkExperienceSection, SkillsSection, ContactFormSection } from '@/sections'
 
 export default function Home() {
   return (
