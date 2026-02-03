@@ -1,9 +1,9 @@
-import Prism from "@/components/backgrounds/Prism"
+import Prism from "@/components/Prism"
 
 const HeroSection = () => {
   return (
     <section className='w-full h-screen relative overflow-hidden'>
-      <Prism 
+      <Prism suspendWhenOffscreen={true}
         animationType="rotate" timeScale={0.5} height={3} baseWidth={5} 
         scale={3.3} hueShift={0} colorFrequency={1} noise={0} glow={0.7}
       />

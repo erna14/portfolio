@@ -1,54 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
-/* ----------------------------------
-   Glow Input
------------------------------------ */
-
-function GlowInput({
-  label,
-  type = "text",
-  placeholder,
-}: {
-  label: string;
-  type?: string;
-  placeholder?: string;
-}) {
-  const [focused, setFocused] = useState(false);
-
-  return (
-    <div className="relative w-full">
-      <label className="mb-1 block text-xs font-medium text-white/50">
-        {label}
-      </label>
-      <input
-        type={type}
-        placeholder={placeholder}
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
-        className={`
-          w-full rounded-lg border border-white/10 bg-black/60 px-4 py-3 text-white/70
-          backdrop-blur-sm transition-all duration-300
-          focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400
-        `}
-      />
-      {/* Glow effect behind input */}
-      <div
-        className={`
-          pointer-events-none absolute -inset-1 rounded-xl
-          bg-gradient-to-r from-sky-400/30 via-cyan-400/20 to-blue-500/30
-          blur-xl transition-opacity duration-300
-          ${focused ? "opacity-100" : "opacity-0"}
-        `}
-      />
-    </div>
-  );
-}
-
-/* ----------------------------------
-   Section
------------------------------------ */
+import GlowField from "@/components/GlowField";
 
 export default function ContactFormSection() {
   const [submitted, setSubmitted] = useState(false);
@@ -60,19 +13,9 @@ export default function ContactFormSection() {
   };
 
   return (
-    <section
-      id="contact"
-      className="relative w-full border-t border-white/10 bg-black/40 py-16 md:py-24"
-    >
-      {/* subtle background glows */}
-      <div
-        className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-sky-500/5 blur-[100px]"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -right-40 bottom-20 h-80 w-80 rounded-full bg-violet-500/5 blur-[100px]"
-        aria-hidden
-      />
+    <section id="contact" className="relative w-full border-t border-white/10 bg-black/40 py-16 md:py-24" >
+      <div className="pointer-events-none absolute -left-40 top-20 h-50 w-50 md:h-90 md:w-90 rounded-full bg-sky-700/30 blur-[100px]" aria-hidden />
+      <div className="pointer-events-none absolute -right-40 bottom-20 h-70 w-70 md:h-90 md:w-90 rounded-full bg-teal-700/30 blur-[100px]" aria-hidden />
 
       <div className="relative mx-auto max-w-3xl px-6 md:px-12">
         {/* header */}
@@ -89,27 +32,23 @@ export default function ContactFormSection() {
         </div>
 
         {/* form */}
-        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-          <GlowInput label="Name" placeholder="Your full name" />
-          <GlowInput label="Email" type="email" placeholder="you@example.com" />
-          <GlowInput label="Message" placeholder="Write your message..." />
+        <form onSubmit={handleSubmit} className="flex flex-col items-center gap-6">
+          <GlowField label="Name" placeholder="Your full name" />
+          <GlowField label="Email" type="email" placeholder="you@example.com" />
+          <GlowField as="textarea" label="Message" placeholder="Write your message..." />
           
           <button
             type="submit"
-            className="
-              mt-2 self-start rounded-lg bg-sky-400 px-6 py-3 text-sm font-semibold text-black
-              shadow-[0_0_20px_rgba(56,189,248,0.5)]
-              transition-all duration-300 hover:shadow-[0_0_28px_rgba(56,189,248,0.7)]
-            "
+            className="px-6 py-2 bg-white border border-white rounded-full text-black text-sm transition-all duration-300 ease-in-out hover:bg-white/15 hover:border-white/30 hover:text-white hover:backdrop-blur-sm"
           >
             Send Message
           </button>
 
-          {submitted && (
+          {/* {submitted && (
             <p className="mt-2 text-sm text-green-400">
               Message sent! I’ll get back to you soon.
             </p>
-          )}
+          )} */}
         </form>
       </div>
     </section>
