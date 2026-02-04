@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only --esm src/server.ts",
+    "dev": "tsx watch src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
-    "@types/nodemailer": "^7.0.9"
+    "@types/nodemailer": "^7.0.9",
+    "tsx": "^4.21.0"
   }
 }

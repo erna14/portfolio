@@ -23,6 +23,10 @@ app.post("/api/contact", async (req: Request, res: Response) => {
     return res.status(400).json({ error: "Missing required fields." });
   }
 
+  if (!/^\S+@\S+\.\S+$/.test(email)) {
+    return res.status(400).json({ error: "Invalid email address." });
+  }
+
   try {
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
