@@ -3,18 +3,13 @@ import Prism from "@/components/Prism"
 const HeroSection = () => {
   return (
     <section className='w-full h-screen relative overflow-hidden'>
-      <Prism suspendWhenOffscreen={true}
-        animationType="rotate" timeScale={0.5} height={3} baseWidth={5} 
-        scale={3.3} hueShift={0} colorFrequency={1} noise={0} glow={0.7}
+      <Prism suspendWhenOffscreen={true} animationType="rotate" timeScale={0.5} 
+        height={3} baseWidth={5} scale={3.3} hueShift={0} colorFrequency={1} 
+        noise={0} glow={0.7}
       />
 
       <div className='absolute inset-0 z-10 flex items-center justify-center h-screen flex-col gap-6'> 
-        <div
-          className="px-5 py-3 bg-white/10 rounded-full border border-white/20 text-xs font-medium
-                  text-white/80 transition-all duration-300 ease-in-out hover:bg-white/15
-                  hover:border-white/30 hover:text-white hover:-translate-y-0.5
-                  hover:backdrop-blur-sm"
-        >
+        <div className="faded-chip">
           Software Engineer · Web Developer
         </div>
 
@@ -31,14 +26,13 @@ const HeroSection = () => {
         </div>
 
         <div className="flex gap-3 ">
-          <button className="px-6 py-2 bg-white border border-white rounded-full text-black text-sm transition-all duration-300 ease-in-out hover:bg-white/15 hover:border-white/30 hover:text-white hover:backdrop-blur-sm">
+          <button className="filled-button">
             About Me
           </button>
-          <button className="px-6 py-2 bg-white/10 border border-white/30 rounded-full text-sm transition-all duration-300 ease-in-out hover:bg-white hover:border-white hover:text-black">
+          <button className="faded-button">
             Contact Me
           </button>
         </div>
-        
       </div>
     </section>
   )

@@ -70,27 +70,11 @@ function SkillItem({
 
 export default function SkillsSection() {
   return (
-    <section
-      id="skills"
-      className="relative w-full overflow-hidden border-t border-white/10 bg-black/40 py-10 md:py-20"
-    >
-      {/* Subtle gradient orbs for depth */}
-      <div
-        className="pointer-events-none absolute -left-40 -top-40 h-80 w-80 rounded-full bg-blue-500/5 blur-[100px]"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -bottom-40 -right-40 h-80 w-80 rounded-full bg-violet-500/5 blur-[100px]"
-        aria-hidden
-      />
-
+    <section id="skills" className="relative w-full overflow-hidden border-t border-white/10 bg-black/40 py-10 md:py-20">
       <div className="relative mx-auto max-w-6xl px-6 md:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-12 md:mb-16"
+        <motion.div 
+          initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-12 md:mb-16"
         >
           <p className="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-white/50">
             Tech stack
@@ -104,12 +88,9 @@ export default function SkillsSection() {
           </p>
         </motion.div>
 
-        {/* Grid */}
         <motion.ul
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+          viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}
           className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
         >
           {skills.map((skill, index) => (

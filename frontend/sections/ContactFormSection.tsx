@@ -94,7 +94,7 @@ export default function ContactFormSection() {
 
           {status === "success" && (
             <p className="mt-2 text-sm text-green-400">
-              Message sent! I’ll get back to you soon ✨
+              Message sent! I&apos;ll get back to you soon ✨
             </p>
           )}
 

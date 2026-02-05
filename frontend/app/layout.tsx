@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Erna Berbić | Software Engineer & Web Developer",
+  title: "Erna Berbić",
   description:
     "Portfolio of Erna Berbić - Software Engineer and Web Developer. Full-stack development, interactive UIs, and building smooth experiences for the web.",
 };
