@@ -66,3 +66,10 @@ export const experiences = [
     skills: ["React", "Node.js", "Auth"],
   },
 ];
+
+export const navLinks = [
+  // { href: "/", label: "Home" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#contact", label: "Contact" },
+];

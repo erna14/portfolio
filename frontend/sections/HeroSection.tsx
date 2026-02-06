@@ -1,4 +1,11 @@
-import Prism from "@/components/Prism"
+ "use client";
+import Link from "next/link";
+import Prism from "@/components/Prism";
+
+const scrollToSection = (id: string) => {
+  if (typeof document === "undefined") return;
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+};
 
 const HeroSection = () => {
   return (
@@ -26,12 +33,28 @@ const HeroSection = () => {
         </div>
 
         <div className="flex gap-3 ">
-          <button className="filled-button">
-            About Me
-          </button>
-          <button className="faded-button">
+          <Link
+            href="/#experience"
+            className="filled-button"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("experience");
+              window.history.pushState(null, "", "/#experience");
+            }}
+          >
+            My Journey
+          </Link>
+          <Link
+            href="/#contact"
+            className="faded-button"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("contact");
+              window.history.pushState(null, "", "/#contact");
+            }}
+          >
             Contact Me
-          </button>
+          </Link>
         </div>
       </div>
     </section>

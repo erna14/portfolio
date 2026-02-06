@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import InputTextField from "@/components/InputTextField";
 import TextAreaField from "@/components/TextAreaField";
 import { sendContactMessage } from "@/api/contact";
@@ -17,14 +17,16 @@ export default function ContactFormSection() {
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [error, setError] = useState<string | null>(null);
 
-  const handleChange = (field: keyof typeof form) =>(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange =
+    (field: keyof typeof form) =>
+    (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm((prev) => ({
       ...prev,
       [field]: e.target.value,
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("loading");
     setError(null);

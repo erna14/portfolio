@@ -1,38 +1,52 @@
+"use client";
+
+import { navLinks } from "@/data/constants";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-const navLinks = [
-  { href: "/", label: "About" },
-  { href: "/#projects", label: "Projects" },
-  { href: "/#contact", label: "Contact" },
-];
 
-const Header = () => {
+function scrollToHash(hash: string) {
+  const id = hash.replace(/^#/, "");
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+}
+
+export default function Header() {
+  const pathname = usePathname();
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-white/5 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
-        <Link
-          href="/"
-          className="text-sm font-medium tracking-wide text-white/90 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded"
-        >
+      <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-5">
+        <span className="text-sm font-medium tracking-wide text-white/90 link-styles">
           Erna Berbić
-        </Link>
+        </span>
+      
         <nav
-          className="flex items-center gap-4 md:gap-8 text-sm text-white/70"
+          className="flex items-center gap-5 md:gap-10 text-sm"
           aria-label="Main navigation"
         >
-          {navLinks.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              className="transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded"
-            >
-              {label}
-            </Link>
-          ))}
+          {navLinks.map(({ href, label }) => {
+            const hash = href.includes("#") ? href.split("#")[1] : null;
+            const isHashLink = hash && pathname === "/";
+
+            return (
+              <Link 
+                key={label} href={href} className="link-styles"
+                onClick={
+                  isHashLink
+                    ? (e) => {
+                        e.preventDefault();
+                        scrollToHash(hash);
+                        window.history.pushState(null, "", href);
+                      }
+                    : undefined
+                }
+              >
+                {label}
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </header>
   );
-};
-
-export default Header;
+}
