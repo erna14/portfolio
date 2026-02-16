@@ -28,16 +28,6 @@ app.post("/api/contact", async (req: Request, res: Response) => {
   }
 
   try {
-    // const transporter = nodemailer.createTransport({
-    //   host: process.env.SMTP_HOST,
-    //   port: Number(process.env.SMTP_PORT) || 587,
-    //   secure: Number(process.env.SMTP_PORT) === 465,
-    //   auth: {
-    //     user: process.env.SMTP_USER,
-    //     pass: process.env.SMTP_PASS,
-    //   },
-    // });
-
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -45,18 +35,7 @@ app.post("/api/contact", async (req: Request, res: Response) => {
         pass: process.env.EMAIL_PASS,
       },
     });
-    
-
-    // const toAddress = process.env.CONTACT_TO || process.env.SMTP_USER;
-    // const fromAddress = process.env.CONTACT_FROM || process.env.SMTP_USER;
-
-    // await transporter.sendMail({
-    //   from: fromAddress,
-    //   to: toAddress,
-    //   subject: `New contact form submission from ${name}`,
-    //   replyTo: email,
-    //   text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-    // });
+  
 
     await transporter.sendMail({
       from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,

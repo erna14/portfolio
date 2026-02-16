@@ -1,6 +1,6 @@
  "use client";
 import Link from "next/link";
-import Prism from "@/components/Prism";
+import { Prism } from "@/components/ui";
 
 const scrollToSection = (id: string) => {
   if (typeof document === "undefined") return;

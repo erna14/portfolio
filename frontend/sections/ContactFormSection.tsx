@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, type ChangeEvent, type FormEvent } from "react";
-import InputTextField from "@/components/InputTextField";
-import TextAreaField from "@/components/TextAreaField";
+import { InputTextField, TextAreaField } from "@/components/form";
 import { sendContactMessage } from "@/api/contact";
 
 type SubmitStatus = "idle" | "loading" | "success" | "error";
